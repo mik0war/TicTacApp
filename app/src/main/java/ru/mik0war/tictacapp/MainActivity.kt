@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         val winAction: (Cell)-> Unit = { cell ->
-
+            //TODO
         }
 
         val loseAction: ()-> Unit = {
-
+            //TODO
         }
 
         field = Field(fieldSize, winAction, loseAction)
