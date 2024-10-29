@@ -2,7 +2,7 @@ package ru.mik0war.tictacapp.engine
 
 class Field(
     private val fieldSize: Int,
-    private val finishAction: (Cell) -> Unit,
+    private val winAction: (Cell) -> Unit,
     private val loseAction: ()-> Unit
 ) {
     private val cells: Array<Array<Cell>> =
@@ -15,7 +15,7 @@ class Field(
             onClickAction.invoke(cell)
 
             if (checkIsWin(cell))
-                finishAction.invoke(cells[x][y])
+                winAction.invoke(cells[x][y])
 
             if (checkIsLose())
                 loseAction.invoke()
