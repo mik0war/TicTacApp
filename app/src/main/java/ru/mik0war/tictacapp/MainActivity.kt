@@ -3,18 +3,12 @@ package ru.mik0war.tictacapp
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TableRow
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBar.LayoutParams
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import ru.mik0war.tictacapp.databinding.ActivityMainBinding
 import ru.mik0war.tictacapp.databinding.CongratulationsDialogBinding
 import ru.mik0war.tictacapp.engine.Cell
@@ -36,15 +30,15 @@ class MainActivity : AppCompatActivity() {
         val finishAction: (Cell)-> Unit = { cell ->
 
             Toast.makeText(this, "Congratulations, $cell", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, MainActivity::class.java))
-            
+
+
             val dialog = Dialog(this)
 
             val dialogBinding = CongratulationsDialogBinding.inflate(layoutInflater)
             dialog.setContentView(dialogBinding.root)
 
             dialogBinding.retryButton.setOnClickListener {
-
+                startActivity(Intent(this, MainActivity::class.java))
             }
 
             dialog.show()
