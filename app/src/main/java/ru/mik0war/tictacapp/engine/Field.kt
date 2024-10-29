@@ -23,38 +23,12 @@ class Field(
     }
 
     private fun checkIsWin(cell: Cell): Boolean {
-        var inMainDiagonalCount = 0
-        var inSecondDiagonalCount = 0
-
-        for (x in 0..<fieldSize) {
-            if (cells[x].filter {
-                    it == cell
-                }.count() == fieldSize)
-                return true
-
-            var inColumnsCount = 0
-            for(y in 0 ..<fieldSize){
-                if(cells[y][x] == cell)
-                    inColumnsCount++
-            }
-
-            if(inColumnsCount == fieldSize)
-                return true
-
-            if(cells[x][x] == cell)
-                inMainDiagonalCount++
-
-            if(cells[fieldSize-1-x][x] == cell)
-                inSecondDiagonalCount++
-        }
-        return inMainDiagonalCount == fieldSize || inSecondDiagonalCount == fieldSize
+        //TODO
+        return false
     }
 
     private fun checkIsLose(): Boolean{
-        var commonCount = 0
-        for (line in cells)
-            commonCount += line.count { it == Cell.Common }
-
-        return commonCount == 0
+        //TODO
+        return false
     }
 }
